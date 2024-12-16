@@ -1,5 +1,7 @@
 const express = require("express");
 const cors = require("cors");
+const connectDB = require("./config/db");
+require("dotenv").config();
 
 //app config
 const app = express();
@@ -14,6 +16,7 @@ app.get("/", (req, res) => {
   res.send("API working");
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
+  await connectDB();
   console.log(`Server is up and running on port ${PORT}`);
 });
