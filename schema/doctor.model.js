@@ -37,13 +37,13 @@ const doctorSchema = new mongoose.Schema(
     },
     available: {
       type: Boolean,
-      required: true,
+      default: true,
     },
-    fee: {
+    fees: {
       type: Number,
       required: true,
     },
-    adress: {
+    address: {
       type: Object,
       required: true,
     },
